@@ -3,7 +3,7 @@ package productlist
 import (
 	"html/template"
 
-	adminTemplate "github.com/marerm27/go-admin/template"
+	adminTemplate "github.com/MarErm27/go-admin/template"
 )
 
 type ProductList struct {

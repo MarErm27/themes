@@ -1,7 +1,7 @@
 # GoAdmin Official Themes
 
-- [adminlte](https://github.com/marerm27/themes/tree/master/adminlte)
-- [sword](https://github.com/marerm27/themes/tree/master/sword)
+- [adminlte](https://github.com/MarErm27/themes/tree/master/adminlte)
+- [sword](https://github.com/MarErm27/themes/tree/master/sword)
 
 [中文介绍](./README_CN.md)
 
@@ -16,7 +16,7 @@ package main
 
 import (
 	...
-	_ "github.com/marerm27/themes/adminlte"
+	_ "github.com/MarErm27/themes/adminlte"
 	...
 )
 
