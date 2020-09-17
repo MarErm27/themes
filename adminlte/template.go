@@ -2844,7 +2844,7 @@ function emailFunction() {
         //alert(myArray.length - 1);
     });
 }
-$("section.content").ready(emailFunction)
+$('body').on('DOMSubtreeModified', 'table',emailFunction);
 	</script>
     </body>
     {{if not .Iframe}}
