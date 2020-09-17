@@ -2806,10 +2806,12 @@ function emailFunction() {
         }
     }
 
-    oldArray = localStorage.getItem("sendTo").split(",");
-    if (oldArray == null) {
-        oldArray = []
+    emailString = localStorage.getItem("sendTo");
+    if (emailString == null) {
+        emailString = ""
     }
+    oldArray = emailString.split(",");
+
 
     var event = document.createEvent("HTMLEvents");
     event.initEvent('change', false, true);
@@ -2849,8 +2851,8 @@ function emailFunction() {
         //alert(myArray.length - 1);
     });
 }
+emailFunction() 
 $('body').on('DOMSubtreeModified', 'table',emailFunction);
-
 	</script>
     </body>
     {{if not .Iframe}}
