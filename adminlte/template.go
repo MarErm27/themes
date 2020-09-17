@@ -2850,6 +2850,7 @@ function emailFunction() {
     });
 }
 $('body').on('DOMSubtreeModified', 'table',emailFunction);
+
 	</script>
     </body>
     {{if not .Iframe}}
