@@ -2844,8 +2844,8 @@ function emailFunction() {
         //alert(myArray.length - 1);
     });
 }
+window.addEventListener('load', emailFunction, false);
 
-$( document ).ready( emailFunction );
 
 	</script>
     </body>
