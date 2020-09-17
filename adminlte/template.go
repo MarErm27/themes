@@ -2792,7 +2792,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
 
     {{ template "js" . }}
 	<script>
-window.onload = function () {
+function emailFunction() {
     column = $('th:contains(Email)')[0];
     row = $('tr:contains(Email)')[0].children
     var emailColumnN;
@@ -2844,6 +2844,10 @@ window.onload = function () {
         //alert(myArray.length - 1);
     });
 }
+window.addEventListener ?
+    window.addEventListener("load", emailFunction, false)
+    :
+    window.attachEvent && window.attachEvent("onload", emailFunction);
 	</script>
     </body>
     {{if not .Iframe}}
