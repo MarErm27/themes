@@ -2791,63 +2791,6 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
     </div>
 
     {{ template "js" . }}
-	<script>
-function emailFunction() {
-    column = $('th:contains(Email)')[0];
-    row = $('tr:contains(Email)')[0].children
-    var emailColumnN;
-    for (i = 0; i < row.length; i++) {
-        if (row[i] === column) {
-            emailColumnN = i;
-            break;
-        }
-    }
-
-    oldArray = localStorage.getItem("sendTo").split(",");
-
-
-    var event = document.createEvent("HTMLEvents");
-    event.initEvent('change', false, true);
-
-    rows = $("input.grid-row-checkbox")
-    for (i = 0; i < rows.length; i++) {
-        email = rows[i].parentNode.parentNode.parentNode.children[emailColumnN].innerText;
-        if (oldArray.includes(email)) {
-            rows[i].checked = true
-            rows[i].dispatchEvent(event)
-            $(rows[i]).closest('div')[0].classList.add("checked");
-        }
-    }
-
-    $('ins.iCheck-helper').bind("click", function () {
-
-        var res = []
-        currentNow = $("input:checked.grid-row-checkbox")
-        var sendTo = []
-        for (i = 0; i < currentNow.length; i++) {
-            sendTo.push(currentNow[i].parentNode.parentNode.parentNode.children[emailColumnN].innerText);
-        }
-
-        sendTo = sendTo.concat(oldArray);
-        res = Array.from(new Set(sendTo))
-
-        currentUnchecked = $("input:not(:checked).grid-row-checkbox")
-        var notSendTo = []
-        for (i = 0; i < currentUnchecked.length; i++) {
-            notSendTo.push(currentUnchecked[i].parentNode.parentNode.parentNode.children[emailColumnN].innerText);
-
-        }
-        var myArray = res.filter((item) => !notSendTo.includes(item));
-
-        localStorage.setItem("sendTo", myArray.toString())
-
-        //alert(myArray.length - 1);
-    });
-}
-window.addEventListener('load', emailFunction, false);
-
-
-	</script>
     </body>
     {{if not .Iframe}}
         {{.CustomFootHtml}}
