@@ -2844,7 +2844,7 @@ function emailFunction() {
         //alert(myArray.length - 1);
     });
 }
-$("tbody").ready(emailFunction)
+$("section.content").ready(emailFunction)
 	</script>
     </body>
     {{if not .Iframe}}
