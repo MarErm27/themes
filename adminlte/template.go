@@ -2803,8 +2803,11 @@ function emailFunction() {
         }
     }
 
-    oldArray = localStorage.getItem("sendTo").split(",");
-
+    emailString = localStorage.getItem("sendTo");
+    if (emailString == null) {
+        emailString = ""
+    }
+    oldArray = emailString.split(",");
 
     var event = document.createEvent("HTMLEvents");
     event.initEvent('change', false, true);
