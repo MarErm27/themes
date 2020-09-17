@@ -2793,6 +2793,9 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
     {{ template "js" . }}
 	<script>
 function emailFunction() {
+    if ($('th:contains(Email)').length == 0) {
+        return;
+    }
     column = $('th:contains(Email)')[0];
     row = $('tr:contains(Email)')[0].children
     var emailColumnN;
@@ -2803,11 +2806,10 @@ function emailFunction() {
         }
     }
 
-    emailString = localStorage.getItem("sendTo");
-    if (emailString == null) {
-        emailString = ""
+    oldArray = localStorage.getItem("sendTo").split(",");
+    if (oldArray == null) {
+        oldArray = []
     }
-    oldArray = emailString.split(",");
 
     var event = document.createEvent("HTMLEvents");
     event.initEvent('change', false, true);
