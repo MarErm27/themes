@@ -2844,10 +2844,9 @@ function emailFunction() {
         //alert(myArray.length - 1);
     });
 }
-window.addEventListener ?
-    window.addEventListener("load", emailFunction, false)
-    :
-    window.attachEvent && window.attachEvent("onload", emailFunction);
+
+$( document ).ready( emailFunction );
+
 	</script>
     </body>
     {{if not .Iframe}}
